@@ -78,6 +78,9 @@ section{
 }
 #banner{
 	position: relative;
+	background-image: url(http://lorempixel.com/1200/500/);
+	background-size: cover;
+	height: 50vh;
 }
 #banner img{
 	width: 100%;
@@ -200,4 +203,10 @@ section{
 	border-radius: 7px;
 	margin-top:15px; 
 
+}
+footer{
+	font-size: 10px;
+	text-align: center;
+	display: block;
+	margin: 0 auto;
 }
