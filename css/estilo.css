@@ -75,7 +75,9 @@ header .conteudo{
 section{
 	width: 100%;
 	margin-bottom: 25px;
+	
 }
+
 #banner{
 	position: relative;
 	background-image: url(http://lorempixel.com/1200/500/);
@@ -109,6 +111,9 @@ section{
 #banner a:hover{
 	background: rgba(51,51,51,0.5);
 }
+#produto{
+	text-align: center;
+}
 #produto h2{
 	text-align: center;
 	font-size: 2em;
@@ -131,7 +136,10 @@ section{
 .areas li{
 	width: 40%;
 	margin: 10px;
-	border:1px solid black;
+	border: 1px solid transparent;
+}
+.areas li:hover{
+	border:1px solid #32a83a;
 }
 .areas li img{
 	margin: auto;
