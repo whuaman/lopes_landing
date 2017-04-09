@@ -1,0 +1,7 @@
+@media (min-width: 1000px){
+	.menu{
+		position: static;
+		width: auto;
+		height: auto;
+	}
+}
