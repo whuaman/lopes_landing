@@ -67,7 +67,7 @@ header label{
 	color: #ffffff;
 	display: block;
 	height: 50px;
-	padding: 15px;
+	padding: 10px 15px;
 	border-bottom: 1px solid rgba(255,255,255,0.4)
 }
 #menu-bar:checked ~ .menu{
@@ -94,9 +94,10 @@ section{
 
 #banner{
 	position: relative;
-	background-image: url('http://i.imgur.com/9AP3Fwp.jpg');
+	background-image: url('http://i.imgur.com/XQxN560.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 	height: 60vh;
 }
 #banner img{
@@ -112,14 +113,14 @@ section{
 }
 #banner h1{
 	font-size: 1.5em;
-	text-shadow: 4px 4px 10px black;
+	text-shadow: 2px 2px 2px #222;
 }
 #banner a{
 	width: auto;
 	display: inline-block;
 	text-decoration: none;
 	color: #ffffff;
-	border: 3px solid #f7941d;
+	border: 3px solid #f27109;
 	padding: 10px;
 	margin-top: 15px;
 	border-radius: 5px;
@@ -182,7 +183,9 @@ section{
 #oportunidade .maisinfo{
 	background: #0486da;
 }
-
+#imovel .conteudo{
+	margin-bottom: 10px;
+}
 #imovel a{
 	display: block;
 	text-decoration: none;
@@ -193,6 +196,10 @@ section{
 	border-radius: 5px;
 	border: 1px solid #0486da;
 	font-size: 1em;
+}
+#imovel a:hover{
+	background: #0486da;
+	color: #ffffff;
 }
 #imovel h3{
 	text-align: center;
@@ -256,7 +263,9 @@ footer{
 	padding: 0 20px 20px 20px;
 }
 @media (min-width: 480px){
-
+	menu a {
+		border: 0px;
+	}
 }
 @media (min-width: 768px){
 	.menu{
@@ -275,15 +284,17 @@ footer{
 	.menu a{
 		margin-right: 15px;
 		height: auto;
-		border-radius: 10px;
+		border-radius: 8px;
+		border: 0;
 	}
-	.mi{
+	.menu > .mi{
 		border: 2px solid #00c0f1;
-		color: #333;
+	}
+	.menu .mi:hover{
+		background:#00c0f1;
 	}
 	.chat{
 		background: #f27109;
-		border: 0;	
 	}
 	#imovel, #oportunidade, #produto p, .conteudo{
 		max-width: 1000px;
@@ -293,7 +304,7 @@ footer{
 	}
 	#banner h1{
 		font-size: 2em;
-		text-align: left;
+		text-align: center;
 	}
 
 	#oportunidade a{
@@ -301,6 +312,7 @@ footer{
 	}
 	.unidade-item1{
 		width: 30%;
+		padding: 40px 0px;
 	}
 	#imovel .conteudo{
 		display: flex;
@@ -309,9 +321,16 @@ footer{
 	}
 	#imovel h3{
 		text-align: left;
-		} 
+	} 
 	.areas li{
 	width: 12%;
-}
+	}
+	#banner a{
+	background: #f27109;
+	}
+	#banner a:hover{
+	background: #f7941d;
+	}
+
 
 }
