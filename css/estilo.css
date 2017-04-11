@@ -9,7 +9,7 @@
 	position: relative;
 	z-index: -1000;
 	overflow: hidden;
-	height: 60vh;
+	height: 50vh;
 	top: 0;
 	left: 0;
 }
@@ -94,11 +94,11 @@ section{
 
 #banner{
 	position: relative;
-	background-image: url('http://i.imgur.com/XQxN560.jpg');
+	background-image: url('http://i.imgur.com/FIvYDKe.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;
-	height: 60vh;
+	background-position: center;
+	height: 50vh;
 }
 #banner img{
 	width: 100%;
@@ -330,6 +330,7 @@ footer{
 	}
 	#banner a:hover{
 	background: #f7941d;
+	border: 3px solid #f7941d;
 	}
 
 
