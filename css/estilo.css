@@ -5,13 +5,28 @@
 	box-sizing: border-box;
 
 }
+#background-wrap{
+	position: relative;
+	z-index: -1000;
+	overflow: hidden;
+	height: 60vh;
+	top: 0;
+	left: 0;
+}
+#video-elemento{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -100;
+}
 body{
 	font-family: 'Nunito', sans-serif, helvetica;
 }
 header{
 	width: 100%;
 	height: 80px;
-	background: transparent;
+	background: rgba(0,0,0,.4);
 	color: #444;
 
 	position: fixed;
@@ -22,7 +37,6 @@ header{
 .conteudo{
 	width: 98%;
 	margin: auto;
-
 }
 .logo img{
 	width: 150px;
@@ -80,9 +94,10 @@ section{
 
 #banner{
 	position: relative;
-	background-image: url(http://lorempixel.com/1200/500/);
+	background-image: url('http://i.imgur.com/9AP3Fwp.jpg');
 	background-size: cover;
-	height: 50vh;
+	background-repeat: no-repeat;
+	height: 60vh;
 }
 #banner img{
 	width: 100%;
@@ -97,18 +112,19 @@ section{
 }
 #banner h1{
 	font-size: 1.5em;
+	text-shadow: 4px 4px 10px black;
 }
 #banner a{
-	width: 170px;
-	display:block;
+	width: auto;
+	display: inline-block;
 	text-decoration: none;
 	color: #ffffff;
 	border: 3px solid #f7941d;
-	padding: 5px;
-	margin-top: 10px;
+	padding: 10px;
+	margin-top: 15px;
 	border-radius: 5px;
 }
-#banner a:hover{
+#background-wrap a:hover{
 	background: rgba(51,51,51,0.5);
 }
 #produto{
@@ -118,12 +134,13 @@ section{
 	text-align: center;
 	font-size: 1.5em;
 	margin-bottom: 15px;
-	padding: 5px;
+	padding: 10px;
 }
 #produto p{
 	text-align: center;
 	line-height: 30px;
 	margin: 0px;
+	padding: 10px;
 }
 .areas{
 	display: flex;
@@ -147,6 +164,7 @@ section{
 }
 #oportunidade h3{
 	text-align: center;
+	padding: 15px;
 
 }
 #oportunidade a{
@@ -196,13 +214,28 @@ section{
  }
 .unidade-item1{
 	border: 1px solid #b8b8b8;
-	border-radius: 4px;
 	text-align: center;
 	background: #ffffff;
 	width: 60%;
 	margin: 15px;
 	padding: 20px 0;
 	color: #333333;
+	border-radius:4px;
+}
+#unidades p a{
+	text-decoration: none;
+	color: #0072bb;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+#unidades .conteudo .unidade-item1:nth-child(even){
+	border:none;
+	color: #ffffff;
+    background: #0170b8; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#0170b8, #064169); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0170b8, #064169); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0170b8, #064169); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0170b8, #064169); /* Standard syntax (must be last) */
 }
 .unidade-item1 a{
 	background: #0486da;
@@ -223,9 +256,7 @@ footer{
 	padding: 0 20px 20px 20px;
 }
 @media (min-width: 480px){
-	/*#banner h1{
-		font-size: 1.5em;
-	}*/
+
 }
 @media (min-width: 768px){
 	.menu{
@@ -236,6 +267,7 @@ footer{
 		float: right;
 		display: flex;
 		background: transparent;
+		margin: 10px;
 	}
 	header label{
 		display: none;
@@ -263,6 +295,7 @@ footer{
 		font-size: 2em;
 		text-align: left;
 	}
+
 	#oportunidade a{
 		display: inline-block;
 	}
@@ -277,6 +310,8 @@ footer{
 	#imovel h3{
 		text-align: left;
 		} 
+	.areas li{
+	width: 12%;
 }
 
 }
