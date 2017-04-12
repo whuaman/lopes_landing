@@ -3,7 +3,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 }
 #background-wrap{
 	position: relative;
@@ -177,6 +176,7 @@ section{
 	margin: 15px;
 	border-radius: 5px;
 }
+
 #oportunidade .visita{
 	background: #32a83a;
 }
@@ -200,6 +200,7 @@ section{
 #imovel a:hover{
 	background: #0486da;
 	color: #ffffff;
+	box-shadow: 1px 1px 20px #999999;
 }
 #imovel h3{
 	text-align: center;
@@ -292,9 +293,15 @@ footer{
 	}
 	.menu .mi:hover{
 		background:#00c0f1;
+
+	}
+	.menu .chat:hover{
+		background:#f7941d;
+		
 	}
 	.chat{
 		background: #f27109;
+
 	}
 	#imovel, #oportunidade, #produto p, .conteudo{
 		max-width: 1000px;
@@ -309,6 +316,9 @@ footer{
 
 	#oportunidade a{
 		display: inline-block;
+	}
+	#oportunidade a:hover{
+		box-shadow: 1px 1px 20px #999999;
 	}
 	.unidade-item1{
 		width: 30%;
@@ -332,6 +342,9 @@ footer{
 	background: #f7941d;
 	border: 3px solid #f7941d;
 	}
+	.unidade-item1 a:hover{
+	background: #07639e;
+}
 
 
 }
