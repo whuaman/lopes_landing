@@ -9,6 +9,62 @@
 
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/fontello.css">
+		<style>	
+
+		.modal-container{
+			position: fixed;
+			background: #fff;
+			width: 80%;
+			max-width:400px;
+			left: 50%;
+			padding: 20px;
+			border-radius: 5px;
+
+			transform:  translate(-50%, -200%);
+			-webkit-transform: translate(-50%, -200%);
+			-ms-transform: translate(-50%, -200%);
+
+			transition: transform 200ms ease-out;
+			-webkit-transition: -webkit-transform 200ms ease-out;
+
+			z-index: 100;
+		}
+		.modal:before{
+			content: "";
+			position: fixed;
+			background: rgba(0,0,0,.6);
+			display: none;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+		form input{
+			padding: 15px;
+			border-radius: 5px;
+			border: 1px solid #999;
+		}
+		form button{
+			background: #0486da;
+			padding: 15px;
+			border: none;
+			border-radius: 5px;
+			width: 90%;
+			color: #ffffff;
+			margin: 0 auto;
+
+		}
+		.modal:target:before{
+			display: block;
+		}
+		.modal:target .modal-container{
+			top: 20%;
+			transform:  translate(-50%, 0%);
+			-webkit-transform: translate(-50%, 0%);
+			-ms-transform: translate(-50%, 0%);
+		}
+		#modal-close{}
+	</style>
 </head>
 <body>
 	<header>
@@ -21,13 +77,26 @@
 			<input type="checkbox" id="menu-bar">
 			<label class="icon-menu" for="menu-bar"></label>
 			<nav class="menu">
-				<a href="#" class="mi">Mais informações&nbsp;&#8594;</a>
+				<a href="#maisinfolead" class="mi">Mais informações&nbsp;&#8594;</a>
 				<a href="#" class="chat">Inicie uma conversa&nbsp;&#8594;</a>
 			</nav>
 
 		</div>
 	</header>
-
+	<!--fim do modal-->
+	<div class="modal" id="maisinfolead">
+		<div class="modal-container">
+			<p style="margin-bottom:15px;">Receber informações :)</p>
+			<form action="#">
+				<input type="text" placeholder="Seu Nome"><br><br>
+				<input type="text" placeholder="Seu Email"><br><br>
+				<button onclick="leadSend();">Enviar</button>
+			</form>
+			<br>
+			<a href="#modal-close" style="border-radius:50%; color: #fff; text-align: center; text-decoration: none; padding: 10px; display: block; width: 40px; background:#333;">X</a>
+		</div>
+	</div>
+	<!--fim do modal-->
 	<main>
 
 		<section id="banner">
@@ -69,8 +138,9 @@
 		<section id="oportunidade">
 			<h3>Aproveite para saber mais sobre essa oportunidade</h3>
 			<a href="#" class="visita" target="_blank">Agende uma visita&nbsp;&nbsp;&#8594;</a>
-			<a href="#" class="maisinfo" target="_blank">Receba informações por email&nbsp;&nbsp;&#8594;</a>
+			<a href="#maisinfolead" class="maisinfo" >Receba informações por email&nbsp;&nbsp;&#8594;</a>
 		</section>
+
 		<section style="background:rgba(0,0,0,.5); background-image: url(img/foto_back.jpg);background-size: cover; background-position: center; padding:20px; margin-top:20px;">
 			<div class="fotorama" style="margin:0 auto; max-width:650px;">
 			    <img src="img/fachada.jpg">
@@ -88,7 +158,7 @@
 		<section id="imovel">
 		<div class="conteudo">
 			<h3>Gostou deste imóvel? <br>Receba as 3 plantas no seu email</h3>
-			<a href="#" target="_blank">Receba a planta no email &#8594;</a>
+			<a href="#maisinfolead" >Receba a planta no email &#8594;</a>
 		</div>
 		</section>
 		<section id="unidades">
@@ -100,7 +170,7 @@
 					<p>95 a 127 m²</p>
 					<p>3 Dorms | 3 suítes</p>
 					<p>2 Vagas</p>
-					<a href="#">Solicitar preço</a>
+					<a href="#maisinfolead">Solicitar preço</a>
 				</div>
 
 				<div class="unidade-item1">
@@ -108,7 +178,7 @@
 					<p>151 m²</p>
 					<p>4 Dorms | 4 suítes</p>
 					<p>3 Vagas</p>
-					<a href="#">Solicitar preço</a>
+					<a href="#maisinfolead">Solicitar preço</a>
 				</div>
 
 				<div class="unidade-item1">
@@ -116,7 +186,7 @@
 					<p>95 a 127 m²</p>
 					<p>3 Dorms | 3 suítes</p>
 					<p>2 Vagas</p>
-					<a href="#">Solicitar preço</a>
+					<a href="#maisinfolead">Solicitar preço</a>
 				</div>
 			</div>
 			<p>Quer ver outros imóveis? <a href="http://www.lopes.com.br/busca/estado=SP/cidade=S%C3%A3o%20Bernardo%20do%20Campo/bairro-regiao=Jardim%20do%20Mar/estagio=lancamento" target="_blank"><b>Clique aqui</b></a></p>
@@ -128,8 +198,45 @@
 			<p>&copy 2017 Copyright - LPS São Paulo - CRECI/SP 24.073-J. FOR YOU CNPJ: 08.094.722/0001-64 - Consultoria de Imóveis S/A - Todos os direitos reservados</p>
 		</div>
 	</footer>
+<script>
+	
+	function leadSend (){
+		
+		var url = "http://www.lopes.com.br/LeadsFace/Lead/LeadPadrao";
 
+		var enviar =[
+		{
+			"nome_portal": "landing_page2W",
+			"reference": "9763", 
+			"codigoEmpresa": 240,
+			"incorporador": false, 
+		 
+			"nomeCampanha": "Adwords_SantoAndre_2w", 
+		    "interessado": { 
+		    	"email": "teste-integracao@teste.com", 
+		    	"nome": "Teste Integracao" 
+				},
+		  	"mensagem": "Olá, gostaria de ter mais informações sobre Helbor Family Garden. Aguardo seu contato,obrigado."
+		}];
 
+		$.ajax({
+			type: 'POST',
+			url: url,
+			crossDomain: true,
+			contentType: "application/json; charset=utf-8",
+			data: enviar,
+			dataType: 'json',
+			success: function(){
+				console.log('deu certo');
+			},
+			fail: function(){
+				console.log('deu ruim');
+			}
+
+		});
+		}
+		
+</script>
 <!-- 1. Link to jQuery (1.8 or later), -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
 <!-- fotorama.css & fotorama.js. -->
