@@ -156,7 +156,7 @@ section{
 	border: 1px solid transparent;
 }
 .areas li:hover{
-	border:1px solid #32a83a;
+	border:1px solid #f2148c;
 }
 .areas li img{
 	margin: auto;
@@ -264,8 +264,14 @@ footer{
 	padding: 0 20px 20px 20px;
 }
 @media (min-width: 480px){
-	menu a {
-		border: 0px;
+	#oportunidade a{
+		display: inline-block;
+	}
+	section{
+	text-align: center;
+	}
+	#imovel a{
+	display: inline-block;
 	}
 }
 @media (min-width: 768px){
@@ -314,9 +320,6 @@ footer{
 		text-align: center;
 	}
 
-	#oportunidade a{
-		display: inline-block;
-	}
 	#oportunidade a:hover{
 		box-shadow: 1px 1px 20px #999999;
 	}
