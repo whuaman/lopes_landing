@@ -9,7 +9,9 @@
 
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/fontello.css">
-		<style>	
+	
+	
+	<style>	
 
 		.modal-container{
 			position: fixed;
@@ -66,6 +68,9 @@
 			-ms-transform: translate(-50%, 0%);
 		}
 		#modal-close{}
+		label.error{
+			color: red; font-weight: bold; padding: 5px´;
+		}
 	</style>
 </head>
 <body>
@@ -85,20 +90,26 @@
 
 		</div>
 	</header>
+
 	<!--fim do modal-->
 	<div class="modal" id="maisinfolead">
 		<div class="modal-container">
+			
+
+			<form action="#" id="lopeslead" method="POST" >
 			<p style="margin-bottom:15px;">Receber informações :)</p>
-			<form action="#">
-				<input type="text" placeholder="Seu Nome"><br><br>
-				<input type="text" placeholder="Seu Email"><br><br>
-				<button onclick="leadSend();">Enviar</button>
+				<input type="text" id="nome" name="nome" placeholder="Seu Nome"><br><br>
+				<input type="text" id="email" name="email" placeholder="Seu Email"><br><br>
+
+				<button type="submit">Enviar</button>
 			</form>
+
 			<br>
 			<a href="#modal-close" style="border-radius:50%; color: #fff; text-align: center; text-decoration: none; padding: 10px; display: block; width: 40px; background:#333; position:absolute; top:-20px; right:-15px;">X</a>
 		</div>
 	</div>
 	<!--fim do modal-->
+
 	<main>
 
 		<section id="banner">
@@ -111,7 +122,8 @@
 
 		<section id="produto">
 			<h2>Helbor Family Garden<br>3 a 4 dorms, 4 suítes e 2 ou 3 vagas</h2>
-			<p>O primeiro condomínio clube com mais de 8.000m² de terreno na Chácara Inglesa, um dos bairros residenciais mais desejados e valorizados de São Bernardo do Campo. Contate um de nossos corretores associados para saber mais sobre esse projeto exclusivo.</p>
+			<p>Venha morar no primeiro condomínio clube com mais de 8.000m² de terreno na Chácara Inglesa, sendo um dos bairros residenciais mais desejados e valorizados de São Bernardo do Campo e a poucos metros da Rodovia Anchieta. Realize seu sonho agora mesmo !
+			Você sabia? Que São Bernardo do Campo, possui Índice de Desenvolvimento Humano (IDH) muito alto (0,805)*, sendo um dos mais altos do Estado de São Paulo, isso significa que viver aqui e sinônimo de qualidade de vida dentro e fora do Helbor Family Garden. *Dados PNUD/2010</p>
 			<span style="background:#f2148c; text-align: center; padding:5px 10px; border-radius:15px; color: #ffffff; display: inline-block; margin: 10px auto ">Lançamento | Na Planta</span>
 			<div class="conteudo">
 				<ul class="areas">
@@ -200,9 +212,18 @@
 			<p>&copy 2017 Copyright - LPS São Paulo - CRECI/SP 24.073-J. FOR YOU CNPJ: 08.094.722/0001-64 - Consultoria de Imóveis S/A - Todos os direitos reservados</p>
 		</div>
 	</footer>
+
+
+<!-- 1. Link to jQuery (1.8 or later), -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
 <script>
-	
-	function leadSend (){
+
+	function sendData (){
 		
 		var url = "http://www.lopes.com.br/LeadsFace/Lead/LeadPadrao";
 
@@ -215,8 +236,8 @@
 		 
 			"nomeCampanha": "Adwords_SantoAndre_2w", 
 		    "interessado": { 
-		    	"email": "teste-integracao@teste.com", 
-		    	"nome": "Teste Integracao" 
+		    	"email": $('#email').val(), 
+		    	"nome": $('#nome').val()
 				},
 		  	"mensagem": "Olá, gostaria de ter mais informações sobre Helbor Family Garden. Aguardo seu contato,obrigado."
 		}];
@@ -229,20 +250,70 @@
 			data: enviar,
 			dataType: 'json',
 			success: function(){
-				console.log('deu certo');
+				console.log('sucesso');
 			},
 			fail: function(){
-				console.log('deu ruim');
+				console.log('bad');
 			}
 
 		});
+
+		return;
+	}
+
+	$.validator.setDefaults({
+
+		submitHandler:function(){
+			$('form').slideUp();
+
+			$('.modal-container').append('<h3 style="text-align:center; color:green;">Obrigado :) <br>Em breve entraremos em contato </h3>').hide().delay(300).slideDown();
+
 		}
+
+	});
+
+	function validateForm(elem){
+		var element = $(elem);
 		
+		element.validate({
+			rules:{
+				nome:{
+					required:true,
+					minlength:5
+				},
+				email:{
+					required:true,
+					email:true
+				},
+			},
+			messages:{
+				nome:{
+					required:" Hey, queremos saber seu nome :)",
+					minlength:" Hey, queremos saber seu nome :)"
+				},
+				email:{
+					required:" Ops, precisamos do seu email",
+					email:"informe um email válido"
+				},					
+				
+			},
+
+			invalidHandler: function(event, validator) {
+				var errors = validator.numberOfInvalids();
+    			
+    			if (errors) {
+					
+				} else {
+					sendData();
+				}
+			}
+
+		});
+	};
+
+	validateForm('#lopeslead');
+
 </script>
-<!-- 1. Link to jQuery (1.8 or later), -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
-<!-- fotorama.css & fotorama.js. -->
-<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
 </body>
 </html>
