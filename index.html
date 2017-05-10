@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	 <link href="http://www.lopes.com.br/faviconLopes.ico" rel="shortcut icon" type="image/x-icon" />
@@ -9,7 +9,9 @@
 
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/fontello.css">
-		<style>	
+	
+	
+	<style>	
 
 		.modal-container{
 			position: fixed;
@@ -27,7 +29,7 @@
 			transition: transform 200ms ease-out;
 			-webkit-transition: -webkit-transform 200ms ease-out;
 
-			z-index: 100;
+			z-index: 1000;
 		}
 		.modal:before{
 			content: "";
@@ -38,6 +40,7 @@
 			left: 0;
 			height: 100%;
 			width: 100%;
+			z-index: 5;
 		}
 		form input{
 			padding: 9px;
@@ -66,6 +69,9 @@
 			-ms-transform: translate(-50%, 0%);
 		}
 		#modal-close{}
+		label.error{
+			color: red; font-weight: bold; padding: 5px´;
+		}
 	</style>
 </head>
 <body>
@@ -80,38 +86,57 @@
 			<label class="icon-menu" for="menu-bar"></label>
 			<nav class="menu">
 				<a href="#maisinfolead" class="mi">Mais informações&nbsp;&#8594;</a>
-				<a href="#" class="chat">Inicie uma conversa&nbsp;&#8594;</a>
+				<a href="http://www.lopes.com.br/LeadFlow?type=CHAT&CompanyId=242&Reference=9763&lpsmidiaorigem=pg:S|ft:Google|camp:Adwords_SantoAndre_2w" class="chat" target="_blank">Inicie uma conversa&nbsp;&#8594;</a>
 			</nav>
 
 		</div>
 	</header>
+
 	<!--fim do modal-->
-	<div class="modal" id="maisinfolead">
+	<div class="modal" id="maisinfolead" style="z-index:7;">
 		<div class="modal-container">
+			
+
+			<form action="#" id="lopeslead" method="POST" >
 			<p style="margin-bottom:15px;">Receber informações :)</p>
-			<form action="#">
-				<input type="text" placeholder="Seu Nome"><br><br>
-				<input type="text" placeholder="Seu Email"><br><br>
-				<button onclick="leadSend();">Enviar</button>
+				<input type="text" id="nome" name="nome" placeholder="Seu Nome"><br><br>
+				<input type="text" id="email" name="email" placeholder="Seu Email"><br><br>
+				<button type="submit">Enviar</button>
 			</form>
+
 			<br>
 			<a href="#modal-close" style="border-radius:50%; color: #fff; text-align: center; text-decoration: none; padding: 10px; display: block; width: 40px; background:#333; position:absolute; top:-20px; right:-15px;">X</a>
 		</div>
 	</div>
 	<!--fim do modal-->
+
 	<main>
 
 		<section id="banner">
 			<!--<img src="img/3.jpg" alt=""> -->
-			<div class="conteudo">
+			<div class="conteudo" style=" margin:40px 0;z-index:1;">
 				<h1>O inicie aqui o seu mais novo projeto de vida: Seu lar!</h1>
-				<a href="#">Inicie uma consulta&nbsp;&#8594;</a>
+				<a href="http://www.lopes.com.br/LeadFlow?type=CHAT&CompanyId=242&Reference=9763&lpsmidiaorigem=pg:S|ft:Google|camp:Adwords_SantoAndre_2w" target="_blank">Inicie uma consulta&nbsp;&#8594;</a>
+
+			</div>
+			<div class="fotorama"  data-autoplay="2000" data-nav="false" data-arrows="false" data-maxwidth="100%" style="z-index: -9000;">
+
+
+			
+				<img src="http://i.imgur.com/9DrgJsS.jpg">
+			 	<img src="http://i.imgur.com/F0pZW64.jpg">
+			 	<img src="http://i.imgur.com/UoFxyay.jpg"> 
+			 	<img src="http://i.imgur.com/G8R5xVK.jpg">
+			    <img src="http://i.imgur.com/cYFzTu6.jpg">
+			    <img src="http://i.imgur.com/SpK8bRX.jpg">
+
 			</div>
 		</section>	
 
 		<section id="produto">
 			<h2>Helbor Family Garden<br>3 a 4 dorms, 4 suítes e 2 ou 3 vagas</h2>
-			<p>O primeiro condomínio clube com mais de 8.000m² de terreno na Chácara Inglesa, um dos bairros residenciais mais desejados e valorizados de São Bernardo do Campo. Contate um de nossos corretores associados para saber mais sobre esse projeto exclusivo.</p>
+			<p>Venha morar no primeiro condomínio clube com mais de 8.000m² de terreno na Chácara Inglesa, sendo um dos bairros residenciais mais desejados e valorizados de São Bernardo do Campo e a poucos metros da Rodovia Anchieta. Realize seu sonho agora mesmo !
+			Você sabia? Que São Bernardo do Campo, possui Índice de Desenvolvimento Humano (IDH) muito alto (0,805)*, sendo um dos mais altos do Estado de São Paulo, isso significa que viver aqui e sinônimo de qualidade de vida dentro e fora do Helbor Family Garden. *Dados PNUD/2010</p>
 			<span style="background:#f2148c; text-align: center; padding:5px 10px; border-radius:15px; color: #ffffff; display: inline-block; margin: 10px auto ">Lançamento | Na Planta</span>
 			<div class="conteudo">
 				<ul class="areas">
@@ -139,7 +164,7 @@
 		</section>
 		<section id="oportunidade">
 			<h3>Aproveite para saber mais sobre essa oportunidade</h3>
-			<a href="#" class="visita" target="_blank">Agende uma visita&nbsp;&nbsp;&#8594;</a>
+			<a href="http://www.lopes.com.br/LeadFlow?type=CHAT&CompanyId=242&Reference=9763&lpsmidiaorigem=pg:S|ft:Google|camp:Adwords_SantoAndre_2w" class="visita" target="_blank">Agende uma visita&nbsp;&nbsp;&#8594;</a>
 			<a href="#maisinfolead" class="maisinfo" >Receba informações por email&nbsp;&nbsp;&#8594;</a>
 		</section>
 
@@ -200,49 +225,151 @@
 			<p>&copy 2017 Copyright - LPS São Paulo - CRECI/SP 24.073-J. FOR YOU CNPJ: 08.094.722/0001-64 - Consultoria de Imóveis S/A - Todos os direitos reservados</p>
 		</div>
 	</footer>
+
+
+<!-- 1. Link to jQuery (1.8 or later), -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
 <script>
-	
-	function leadSend (){
+
+	function sendData (){
+		var data = JSON.stringify({
+			"nome_portal": "landing_page2W",
+			"reference": "9763",
+			"codigoEmpresa": 242,
+			"incorporador": false,
+			"nomeCampanha": "Adwords_SantoAndre_2w",
+			"interessado": {
+				"email": $('#email').val(),
+				"telefone": {
+					"fone": "",
+					"ddd": ""
+				},
+				"nome": $('#nome').val()
+		},
+		"mensagem": "Olá, gostaria de ter mais informações sobre Helbor Family Garden. Aguardo seu contato,obrigado."
+	});
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = true;
+
+	xhr.addEventListener("readystatechange", function () {
+		if (this.readyState === 4) {
+			console.log(this.responseText);
+		}
+	});
+
+	xhr.open("POST", "http://www.lopes.com.br/LeadsFace/Lead/LeadPadrao");
+	xhr.setRequestHeader("content-type", "application/json");
+	xhr.setRequestHeader("cache-control", "no-cache");
+
+	xhr.send(data);
+
 		
+		
+/*
+		alert("vai enviar dados");
 		var url = "http://www.lopes.com.br/LeadsFace/Lead/LeadPadrao";
 
 		var enviar =[
 		{
 			"nome_portal": "landing_page2W",
 			"reference": "9763", 
-			"codigoEmpresa": 240,
+			"codigoEmpresa": 242,
 			"incorporador": false, 
-		 
 			"nomeCampanha": "Adwords_SantoAndre_2w", 
 		    "interessado": { 
-		    	"email": "teste-integracao@teste.com", 
-		    	"nome": "Teste Integracao" 
+		    	"email": $('#email').val(),
+							
+		    	"nome": $('#nome').val()
 				},
 		  	"mensagem": "Olá, gostaria de ter mais informações sobre Helbor Family Garden. Aguardo seu contato,obrigado."
 		}];
-
+		alert("Montou dados" + enviar);
+		
+		
+		
+		
 		$.ajax({
 			type: 'POST',
 			url: url,
-			crossDomain: true,
+			crossDomain: false,
 			contentType: "application/json; charset=utf-8",
 			data: enviar,
 			dataType: 'json',
 			success: function(){
-				console.log('deu certo');
+			alert("Enviou");
+				console.log('sucesso');
 			},
 			fail: function(){
-				console.log('deu ruim');
+				console.log('bad');
+				alert("Não enviou");
 			}
 
 		});
+*/
+
+		return;
+	}
+
+	$.validator.setDefaults({
+
+		submitHandler:function(){
+		    sendData();
+			$('form').slideUp();
+
+			$('.modal-container').append('<h3 style="text-align:center; color:green;">Obrigado :) <br>Em breve entraremos em contato </h3>').hide().delay(300).slideDown();
+
 		}
+
+	});
+
+	function validateForm(elem){
+		var element = $(elem);
 		
+		element.validate({
+			rules:{
+				nome:{
+					required:true,
+					minlength:5
+				},
+				email:{
+					required:true,
+					email:true
+				},
+			},
+			messages:{
+				nome:{
+					required:" Hey, queremos saber seu nome :)",
+					minlength:" Hey, queremos saber seu nome :)"
+				},
+				email:{
+					required:" Ops, precisamos do seu email",
+					email:"informe um email válido"
+				},					
+				
+			},
+
+			invalidHandler: function(event, validator) {
+				var errors = validator.numberOfInvalids();
+    			
+    			if (errors) {
+					alert("encontrou erro");
+				} else {
+					sendData();
+				}
+			}
+
+		});
+	};
+
+	validateForm('#lopeslead');
+
 </script>
-<!-- 1. Link to jQuery (1.8 or later), -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
-<!-- fotorama.css & fotorama.js. -->
-<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
 </body>
 </html>

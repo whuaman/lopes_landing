@@ -36,6 +36,7 @@ header{
 .conteudo{
 	width: 98%;
 	margin: auto;
+
 }
 .logo img{
 	width: 150px;
@@ -60,6 +61,7 @@ header label{
 	background: rgba(51,51,51,0.9);
 	transition: all 0.5s;
 	transform: translateX(-100%);
+	z-index: 6000;
 }
 .menu a{
 	text-decoration: none;
@@ -87,31 +89,36 @@ header .conteudo{
 
 section{
 	width: 100%;
-	margin-bottom: 25px;
-	
+	margin-bottom: 20px;
 }
 
 #banner{
 	position: relative;
-	background-image: url('http://i.imgur.com/FIvYDKe.jpg');
+	
+
+	/*background-image: url('http://i.imgur.com/FIvYDKe.jpg');
+
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
-	height: 50vh;
+	background-position: center;*/
+	
 }
-#banner img{
+/*banner img{
 	width: 100%;
 	height: 100%;
-}
+}*/
 #banner .conteudo{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	color: #fff;
+
+
+	
 }
 #banner h1{
-	font-size: 1.5em;
+	font-size: 1.4em;
 	text-shadow: 2px 2px 2px #222;
 }
 #banner a{
@@ -123,6 +130,7 @@ section{
 	padding: 10px;
 	margin-top: 15px;
 	border-radius: 5px;
+	background-color: #f27109;
 }
 #background-wrap a:hover{
 	background: rgba(51,51,51,0.5);
@@ -319,7 +327,12 @@ footer{
 		font-size: 2em;
 		text-align: center;
 	}
-
+	#banner .conteudo{
+		height: 180px;
+	}
+	.fotorama{
+		max-height: 600px;
+	}
 	#oportunidade a:hover{
 		box-shadow: 1px 1px 20px #999999;
 	}
